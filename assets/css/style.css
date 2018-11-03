@@ -1,11 +1,24 @@
-    
-    .map-div {
-        height: 800;
+ body{
+      font-family: 'Mountains of Christmas', cursive;
+  }
 
-    }
-    #map {
-        height: 800px;
-        width: 800px;
-      }
-      
-    
+.jumbotron{
+    text-align: center;
+    background:url(../../images/header-background.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%; 
+    /*padding-top: -300px;*/
+   }
+
+  body{
+     font-family: 'Mountains of Christmas', cursive;
+   }
+
+ .map-div {
+      height: 800px;
+
+   }
+  #map {
+      height: 800px;
+      width: 800px;
+  }
