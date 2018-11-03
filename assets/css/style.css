@@ -1,3 +1,7 @@
+ body{
+      font-family: 'Mountains of Christmas', cursive;
+  }
+
 .jumbotron{
     text-align: center;
     background:url(../../images/header-background.jpg);
@@ -11,7 +15,14 @@
 
     body{
         font-family: 'Mountains of Christmas', cursive;
-
     }
+  
+ .map-div {
+      height: 800px;
 
-   
+   }
+  #map {
+      height: 800px;
+      width: 800px;
+  }
+
