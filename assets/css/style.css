@@ -1,3 +1,11 @@
-.jumbotron{
     
-}
+    .map-div {
+        height: 800;
+
+    }
+    #map {
+        height: 800px;
+        width: 800px;
+      }
+      
+    
