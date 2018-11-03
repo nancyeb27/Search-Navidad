@@ -1,4 +1,6 @@
 
+    var sf = new Snowflakes();
+
 $("#search-input").on("click", function (event) {
     event.preventDefault();
 
