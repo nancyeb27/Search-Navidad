@@ -4,18 +4,24 @@
 $("#search-input").on("click", function (event) {
     event.preventDefault();
 
-   var queryURL = "https://cors-anywhere.herokuapp.com/https://api.meetup.com/find/upcoming_events?zip=" + userZip +"&radius=100.0&text=christmas&key=37216631b5fb603c2f5a67701a1d";
+    
+    var userZip = $("#zip").val().trim()
+
+    var queryURL = "https://cors-anywhere.herokuapp.com/https://api.meetup.com/2/open_events?&sign=true&photo-host=public&zip=" + userZip + "&text=christmas&radius=10&page=20&key=37216631b5fb603c2f5a67701a1d";
+       
     console.log(queryURL);
-    var userZip = $("#zip").val().trim().
+  
 
     $.ajax({
         url: queryURL,
         method: "GET"
 
-    }).done(function (response) {
+    }).then(function (response) {
+        console.log(response)
 
-        var results = response.data;
-      
+        var results = response.results;
+        console.log(results);
+             
         //brook google maps api call
         var map;
         function initMap() {
@@ -26,12 +32,17 @@ $("#search-input").on("click", function (event) {
           }
         initMap();
       
-        for (var i = 0; i < results.length; i++) {
-            console.log(response);
-        }
+       
 
-    })
-              
+        // for (var i = 0; i < results.length; i++) {
+        //     var name = results[i].name;
+        //     var description = results[i].description;
+
+        //  $("#name").prepend(name);
+        //  $("#description").append(description);
+        //  }
+
+    })          
 
 })
 
