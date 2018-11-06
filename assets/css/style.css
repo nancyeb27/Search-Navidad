@@ -1,5 +1,6 @@
  body{
       font-family: 'Mountains of Christmas', cursive;
+      /*background-image: url();*/
   }
 
 .jumbotron{
@@ -11,17 +12,13 @@
     font-weight: bolder;
     text-shadow: 2px 2px 8px rgb(8, 8, 8);
     }
-
-    body{
-        font-family: 'Mountains of Christmas', cursive;
-    }
   
  .map-div {
-      height: 800px;
+      height: 400px;
 
    }
   #map {
-      height: 800px;
-      width: 800px;
+      height: 400px;
+      width: 400px;
   }
 
