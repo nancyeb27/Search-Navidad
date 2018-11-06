@@ -17,14 +17,6 @@ $("#search-input").on("click", function (event) {
         console.log(response);
         var results = response.results
          
-        //brook google maps api call
-        // var map;
-        // function initMap() {
-        //   var uluru = {lat: -25.344, lng: 131.036};
-        //   var map = new google.maps.Map(
-        //     document.getElementById('map'), {zoom: 4, center: uluru});
-        //   var marker = new google.maps.Marker({position: uluru, map: map});
-        //   }
       
         for (var i = 0; i < results.length; i++) {
 
@@ -46,14 +38,21 @@ $("#search-input").on("click", function (event) {
 
             var map;
             function initMap() {
+            
                 var location = {lat: eventLat, lng: eventLon};
                 var map = new google.maps.Map(
                 document.getElementById('map'), {zoom: 13, center: location});
-                var marker = new google.maps.Marker({position: location, map: map});
+                // var marker = new google.maps.Marker({position: location, map: map});
             }
-            
+             
             initMap();
+            // var marker = new google.maps.Marker({position: location, map: map});
         }
+
+        var marker = new google.maps.Marker({
+            position: {lat: eventLat, lng: eventLon},
+            title:"Hello World!"
+        });
 
     })
               
