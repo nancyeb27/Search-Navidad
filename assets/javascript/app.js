@@ -8,16 +8,7 @@ $("#search-input").on("click", function (event) {
 
     var userZip = $("#zip").val().trim()
 
-    var queryURL = "https://cors-anywhere.herokuapp.com/https://api.meetup.com/2/open_events?&sign=true&photo-host=public&zip=" + userZip + "&text=christmas&radius=10&page=20&key=37216631b5fb603c2f5a67701a1d";
-
-    console.log(queryURL);
-
-
-    var userZip = $("#zip").val().trim()
-    var queryURL = "https://cors-anywhere.herokuapp.com/https://api.meetup.com/2/open_events?&sign=true&photo-host=public&zip=" + userZip + "&text=christmas&page=20&key=37216631b5fb603c2f5a67701a1d";
-    console.log(queryURL);
-    var userZip = $("#zip").val().trim()
-
+    var queryURL = "https://cors-anywhere.herokuapp.com/https://api.meetup.com/2/open_events?&sign=true&photo-host=public&zip=" + userZip + "&text=christmas&radius=10&page=5&key=37216631b5fb603c2f5a67701a1d";
 
     $.ajax({
         url: queryURL,
@@ -25,22 +16,9 @@ $("#search-input").on("click", function (event) {
 
 
     }).then(function (response) {
-        console.log(response)
-
+       
         var results = response.results;
         console.log(results);
-
-        //brook google maps api call
-        var map;
-        function initMap() {
-            var uluru = { lat: -25.344, lng: 131.036 };
-            var map = new google.maps.Map(
-                document.getElementById('map'), { zoom: 4, center: uluru });
-            var marker = new google.maps.Marker({ position: uluru, map: map });
-        }
-        initMap();
-
-
 
         for (var i = 0; i < results.length; i++) {
             var name = results[i].name;
@@ -55,35 +33,19 @@ $("#search-input").on("click", function (event) {
             .append(description[0]);
             $("#description").append(newDep);
             
-        //     var newRow = $("<tr>").append(
-        //         $("<td>").text(name),
-        //         $("<td>").text(description[0]),
-        //         $("<td>").text(googlemap),
+            //     var newRow = $("<tr>").append(
+            //         $("<td>").text(name),
+            //         $("<td>").text(description[0]),
+            //         $("<td>").text(googlemap),
 
 
-        //     );
+            //     );
 
 
-        //     $("#event-table").children("tbody").append(newRow);
-        //     console.log(newRow);
-        }
+            //     $("#event-table").children("tbody").append(newRow);
+            //     console.log(newRow);
 
-    })
-
-    }).done(function (response) {
-        console.log(response);
-        var results = response.results
-         
-        //brook google maps api call
-        // var map;
-        // function initMap() {
-        //   var uluru = {lat: -25.344, lng: 131.036};
-        //   var map = new google.maps.Map(
-        //     document.getElementById('map'), {zoom: 4, center: uluru});
-        //   var marker = new google.maps.Marker({position: uluru, map: map});
-        //   }
-      
-        for (var i = 0; i < results.length; i++) {
+            // MAP DISPLAY
 
             var eventLat;
             var eventLon;
@@ -110,11 +72,10 @@ $("#search-input").on("click", function (event) {
             }
             
             initMap();
+
         }
 
     })
-              
-
 
 })
 
