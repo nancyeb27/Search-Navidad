@@ -1,24 +1,50 @@
 
-    var sf = new Snowflakes();
+var sf = new Snowflakes();
 
 $("#search-input").on("click", function (event) {
     event.preventDefault();
 
+
+
     var userZip = $("#zip").val().trim()
-    var queryURL = "https://cors-anywhere.herokuapp.com/https://api.meetup.com/2/open_events?&sign=true&photo-host=public&zip=" + userZip + "&text=christmas&page=20&key=37216631b5fb603c2f5a67701a1d";
-    console.log(queryURL);
-    var userZip = $("#zip").val().trim()
+
+    var queryURL = "https://cors-anywhere.herokuapp.com/https://api.meetup.com/2/open_events?&sign=true&photo-host=public&zip=" + userZip + "&text=christmas&radius=10&page=5&key=37216631b5fb603c2f5a67701a1d";
 
     $.ajax({
         url: queryURL,
         method: "GET"
 
-    }).done(function (response) {
+    }).then(function (response) {
         console.log(response);
         var results = response.results
          
       
         for (var i = 0; i < results.length; i++) {
+            var name = results[i].name;
+            var description = results[i].description.split("\</p\>");
+            console.log("desp Arrary" + description[0]);
+            // $("#name").append(name);
+            // $("#description").append(description[0]);
+            var newRow = $("<div>").addClass("row")
+            .append(name);
+            $("#name").append(newRow);
+            var newDep = $("<div>").addClass("row")
+            .append(description[0]);
+            $("#description").append(newDep);
+            
+            //     var newRow = $("<tr>").append(
+            //         $("<td>").text(name),
+            //         $("<td>").text(description[0]),
+            //         $("<td>").text(googlemap),
+
+
+            //     );
+
+
+            //     $("#event-table").children("tbody").append(newRow);
+            //     console.log(newRow);
+
+            // MAP DISPLAY
 
             var eventLat;
             var eventLon;
@@ -46,7 +72,6 @@ $("#search-input").on("click", function (event) {
             }
              
             initMap();
-            // var marker = new google.maps.Marker({position: location, map: map});
         }
 
         var marker = new google.maps.Marker({
@@ -55,17 +80,16 @@ $("#search-input").on("click", function (event) {
         });
 
     })
-              
 
 })
 
 
 
-    
 
 
-    
-    
+
+
+
 
 
 
