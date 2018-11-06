@@ -3,7 +3,6 @@
 
 $("#search-input").on("click", function (event) {
     event.preventDefault();
-
     
     var userZip = $("#zip").val().trim()
 
@@ -40,7 +39,7 @@ $("#search-input").on("click", function (event) {
 
         //  $("#name").prepend(name);
         //  $("#description").append(description);
-        //  }
+        // 
 
     })          
 
