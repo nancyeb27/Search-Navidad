@@ -23,26 +23,12 @@ $("#search-input").on("click", function (event) {
             var name = results[i].name;
             var description = results[i].description.split("\</p\>");
             console.log("desp Arrary" + description[0]);
-            // $("#name").append(name);
-            // $("#description").append(description[0]);
-            var newRow = $("<div>").addClass("row")
-            .append(name);
-            $("#name").append(newRow);
-            var newDep = $("<div>").addClass("row")
-            .append(description[0]);
-            $("#description").append(newDep);
-            
-            //     var newRow = $("<tr>").append(
-            //         $("<td>").text(name),
-            //         $("<td>").text(description[0]),
-            //         $("<td>").text(googlemap),
-
-
-            //     );
-
-
-            //     $("#event-table").children("tbody").append(newRow);
-            //     console.log(newRow);
+    
+            //TESTTTTTTT
+            var newRow = $("<tr>");
+            newRow.append("<td>" + name + "<td>");
+            newRow.append("<td>" + description[0] + "<td>");
+            $(".table tbody").append(newRow);
 
             // MAP DISPLAY
 
@@ -68,9 +54,9 @@ $("#search-input").on("click", function (event) {
                 var location = {lat: eventLat, lng: eventLon};
                 var map = new google.maps.Map(
                 document.getElementById('map'), {zoom: 13, center: location});
-                // var marker = new google.maps.Marker({position: location, map: map});
+                var marker = new google.maps.Marker({position: location, map: map});
             }
-             
+             // $("<div>").attr("id", "map" + results[i])
             initMap();
         }
 
