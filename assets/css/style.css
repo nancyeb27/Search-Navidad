@@ -29,22 +29,18 @@ p, td {
 
 #song-text{
     text-align: center;
-
     font-family: 'Mountains of Christmas', cursive;
 }
 
 img{
     height: 200px;
     width: 200px;
-
 }
 
 
 #marquee{
     background-color:aliceblue;
-
 }
-
 
 
 /*countdown timer*/
@@ -93,14 +89,6 @@ img{
     color:red;
 }
 
-    background:url(../../images/header-background.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    color: white;
-    font-weight: bolder;
-    text-shadow: 2px 2px 8px rgb(8, 8, 8);
-    }
-
 #map0 {
     height: 300px;
     width: 300px;
@@ -126,6 +114,8 @@ img{
       width: 300px;
     }
 
-
+.fa{
+    position:center;
+}
 
 
