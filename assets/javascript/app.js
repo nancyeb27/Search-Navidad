@@ -16,7 +16,8 @@ $("#search-input").on("click", function (event) {
 
     }).then(function (response) {
         console.log(response);
-        var results = response.results
+        var results = "";
+        results = response.results;
          
       
         for (var i = 0; i < results.length; i++) {
@@ -28,7 +29,7 @@ $("#search-input").on("click", function (event) {
             var newRow = $("<tr>");
             newRow.append("<td>" + name + "<td>");
             newRow.append("<td>" + description[0] + "<td>");
-            $(".table tbody").append(newRow);
+            $(".table tbody").prepend(newRow);
 
             // MAP DISPLAY
 
