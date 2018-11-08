@@ -4,6 +4,9 @@ var sf = new Snowflakes();
 $("#search-input").on("click", function (event) {
     event.preventDefault();
 
+    var mapCounter = 0;
+
+
     var userZip = $("#zip").val().trim()
 
     var queryURL = "https://cors-anywhere.herokuapp.com/https://api.meetup.com/2/open_events?&sign=true&photo-host=public&zip=" + userZip + "&text=christmas&radius=10&page=5&key=37216631b5fb603c2f5a67701a1d";
@@ -16,46 +19,32 @@ $("#search-input").on("click", function (event) {
         console.log(response);
         var results = response.results
          
-
-
         var imgArray = ["images/Image1.jpeg", "images/Image2.jpg", "images/Image3.jpg", "images/Image4.jpeg", "images/Image5.jpg"]; 
-
-      //   for (var i = 0; i < imgArray.length; i++){
-      //     var img = document.createElement('img');
-      //     img.src = "Image1.jpeg";
-      //     img.src = "Image2.jpg";
-      //     img.src = "Image3.jpg";
-      //     img.src = "Image4.jpeg";
-      //     img.src = "Image5.jpg";
-      //     name.appendChild(img);
-      // };
-
-
 
         for (var i = 0; i < results.length; i++) {
             var name = results[i].name;
             var description = results[i].description.split("\</p\>");
-            //var img = document.createElement("img");
-            //img.src = imgArray[i];
-            //name.append(img);
             console.log("desp Arrary" + description[0]);
-
-        
-            //TESTTTTTTT
+    
             var newRow = $("<tr>");
+            
             var newData = $("<td>");
             var newImg = $("<img>");
-            //newImg = imgArray[i];
 
             newImg.attr('src', imgArray[i]);
             newData.append(name);
             newData.append(newImg);
             newRow.append(newData);
-            //newRow.append("<td>" + name + "<td>");
-            newRow.append("<td>" + description[0] + "<td>");
-            $(".table tbody").append(newRow);
+            newRow.append("<td>" + description[0] + "</td>");
 
-            // MAP DISPLAY
+            var mapCell = $("<td>");
+            var mapDiv = $("<div>");
+            mapDiv.attr("id","map" + mapCounter);
+            mapCell.html(mapDiv);
+            newRow.append(mapCell);
+            $(".table tbody").prepend(newRow);
+
+            // MARKER DISPLAY
 
             var eventLat;
             var eventLon;
@@ -78,17 +67,15 @@ $("#search-input").on("click", function (event) {
             
                 var location = {lat: eventLat, lng: eventLon};
                 var map = new google.maps.Map(
-                document.getElementById('map'), {zoom: 13, center: location});
+                document.getElementById("map" + mapCounter), {zoom: 13, center: location});
                 var marker = new google.maps.Marker({position: location, map: map});
             }
-             // $("<div>").attr("id", "map" + results[i])
+            
             initMap();
-        }
 
-        var marker = new google.maps.Marker({
-            position: {lat: eventLat, lng: eventLon},
-            title:"Hello World!"
-        });
+            mapCounter++
+            console.log("counter: " + mapCounter);
+        }
 
     })
 
@@ -116,7 +103,8 @@ let countDown = new Date('Dec 25, 2018 00:00:00').getTime(),
     //  clearInterval(x);
     //  'christmas is here!;
     //}
+    
 
-  }, second)
+})}, second)
 
 
