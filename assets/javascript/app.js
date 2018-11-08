@@ -17,7 +17,8 @@ $("#search-input").on("click", function (event) {
 
     }).then(function (response) {
         console.log(response);
-        var results = response.results
+        var results = "";
+        results = response.results;
          
         var imgArray = ["images/Image1.jpeg", "images/Image2.jpg", "images/Image3.jpg", "images/Image4.jpeg", "images/Image5.jpg"]; 
 
@@ -27,6 +28,7 @@ $("#search-input").on("click", function (event) {
             console.log("desp Arrary" + description[0]);
     
             var newRow = $("<tr>");
+
             
             var newData = $("<td>");
             var newImg = $("<img>");
@@ -42,6 +44,7 @@ $("#search-input").on("click", function (event) {
             mapDiv.attr("id","map" + mapCounter);
             mapCell.html(mapDiv);
             newRow.append(mapCell);
+
             $(".table tbody").prepend(newRow);
 
             // MARKER DISPLAY
@@ -105,6 +108,6 @@ let countDown = new Date('Dec 25, 2018 00:00:00').getTime(),
     //}
     
 
-})}, second)
+}, second)
 
 
