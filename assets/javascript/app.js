@@ -19,7 +19,7 @@ $("#search-input").on("click", function (event) {
         method: "GET"
 
     }).then(function (response) {
-    
+      
         var results = response.results
          
         var imgArray = ["images/Image1.jpeg", "images/Image2.jpg", "images/Image3.jpg", "images/Image4.jpeg", "images/Image5.jpg"]; 
@@ -27,7 +27,7 @@ $("#search-input").on("click", function (event) {
         for (var i = 0; i < results.length; i++) {
             var name = results[i].name;
             var description = results[i].description.split("\</p\>");
-            
+          
             var newRow = $("<tr>");
             var newData = $("<td>");
             var newImg = $("<img>");
@@ -50,8 +50,10 @@ $("#search-input").on("click", function (event) {
                 mapImg.attr("src", "images/no-map.jpg");
                 mapDiv.append(mapImg);
             }
+          
             mapCell.html(mapDiv);
             newRow.append(mapCell);
+
             $(".table tbody").prepend(newRow);
 
             if (results[i].venue) {
