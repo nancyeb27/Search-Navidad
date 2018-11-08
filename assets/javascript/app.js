@@ -3,6 +3,7 @@ var sf = new Snowflakes();
 
 $("#search-input").on("click", function (event) {
     event.preventDefault();
+
     var mapCounter = 0;
 
 
@@ -17,15 +18,23 @@ $("#search-input").on("click", function (event) {
     }).then(function (response) {
         console.log(response);
         var results = response.results
-      
+         
+        var imgArray = ["images/Image1.jpeg", "images/Image2.jpg", "images/Image3.jpg", "images/Image4.jpeg", "images/Image5.jpg"]; 
+
         for (var i = 0; i < results.length; i++) {
             var name = results[i].name;
             var description = results[i].description.split("\</p\>");
             console.log("desp Arrary" + description[0]);
     
-            //TESTTTTTTT
             var newRow = $("<tr>");
-            newRow.append("<td>" + name + "</td>");
+            
+            var newData = $("<td>");
+            var newImg = $("<img>");
+
+            newImg.attr('src', imgArray[i]);
+            newData.append(name);
+            newData.append(newImg);
+            newRow.append(newData);
             newRow.append("<td>" + description[0] + "</td>");
 
             var mapCell = $("<td>");
@@ -35,7 +44,7 @@ $("#search-input").on("click", function (event) {
             newRow.append(mapCell);
             $(".table tbody").prepend(newRow);
 
-            // MAP DISPLAY
+            // MARKER DISPLAY
 
             var eventLat;
             var eventLon;
@@ -49,6 +58,9 @@ $("#search-input").on("click", function (event) {
                 eventLon = results[i].venue.lon;
 
             }
+
+            console.log("Test:" + eventLat);
+            console.log("TestLon:" + eventLon);
 
             var map;
             function initMap() {
@@ -65,20 +77,34 @@ $("#search-input").on("click", function (event) {
             console.log("counter: " + mapCounter);
         }
 
-
     })
 
-})
+  });
+//countdown timer
 
+    const second = 1000,
+    minute = second * 60,
+    hour = minute * 60,
+    day = hour * 24;
 
+let countDown = new Date('Dec 25, 2018 00:00:00').getTime(),
+  x = setInterval(function() {
 
+    let now = new Date().getTime(),
+        distance = countDown - now;
 
+    document.getElementById('days').innerText = Math.floor(distance / (day)),
+      document.getElementById('hours').innerText = Math.floor((distance % (day)) / (hour)),
+      document.getElementById('minutes').innerText = Math.floor((distance % (hour)) / (minute)),
+      document.getElementById('seconds').innerText = Math.floor((distance % (minute)) / second);
+    
+    //do something later when date is reached
+    //if (distance < 0) {
+    //  clearInterval(x);
+    //  'christmas is here!;
+    //}
+    
 
-
-
-
-
-
-
+})}, second)
 
 
