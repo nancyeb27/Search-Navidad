@@ -10,24 +10,48 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
-
 <body>
-   
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h1 class="display-1">Search Navidad</h1>
-          <p class="lead">We could put some text here.</p>
-        </div>
-      </div>
 
- 
+<!--Jumbotron using bootstrap--> 
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-1">Search Navidad</h1>
+       <br>
+     <p class="lead"></p>
+  </div>
+</div>
+
+<!--countdown timer-->
+<div class= "container">
+  <div class="timer">
+    <h3 id="countDown">Countdown till Christmas:</h3>
+      <ul>
+        <li><span id="days"></span>Days</li>
+        <li><span id="hours"></span>Hours</li>
+        <li><span id="minutes"></span>Minutes</li>
+        <li><span id="seconds"></span>Seconds</li>
+      </ul>
+   </div>
+</div>  
+
+<!--Zipcode search input section-->
 <div class="container">
-    <!--Zipcode search input section-->
-    <form id="zipSection">
-        <p>Please enter your zipcode:</p>
+  <!--<form action="" id="myform">-->
+  <form id="zipSection">
+    <p id ="zipText" >Search for local Christmas events:</p>
         <input type="text" id="zip" name="zipcode" placeholder="Enter zipcode">
-        <input id="search-input" type="submit" value="Search">
+      <input id="search-input" type="submit" value="Search">
     </form>
+  <!--</form>-->
+  <br>
+<br>
+
+<!--This section will hold the events-->
+<br>
+<div class="panel panel-success">
+  <div class="panel-heading">
+    <h3 class="panel-title"><strong>2018 Christmas Events</strong></h3>
+      </div>
 
     <!--This section will hold the events-->
     <br>
@@ -36,6 +60,7 @@
         <div class="panel-heading">
           <h3 class="panel-title"><strong>2018 Christmas Events</strong></h3>
         </div>
+
         <div class="panel-body">
           <table class="table table-hover" id='event-table'>
             <thead>
@@ -49,62 +74,41 @@
             </tbody>
           </table>
         </div>
-    </div>
-    <!-- "col- are all estimates, subject to change" -->
-    <div class = "table">
+  </div>
 
-  
-    <div class="row">
-        <div class="col-3" id="name">Event image will go here</div>
-        <div class="col-5" id="description">Event description will go here</div>
-        <div class="col-4" id="map-div">
-                <div id="map"></div>
-        </div>
-    </div>
 
-</div>
-
-    <br>
-    <br>
 <!--Audio Player Code-->
-<div id="audio-section">
-        <p>Song: All I want for Christams</p>
-    <audio controls 
-        source src="assets/audio/christmasmusic.mp3" autoplay>
-    </audio>
+<div class ="container">
+    <div id="audio-section">
+      <p id= song-text>Song: All I want for Christmas</p>
+        <audio controls 
+          source src="assets/audio/christmasmusic.mp3" autoplay>
+        </audio>
+      </div>
     </div>
-    <!--Audio Player
-    <iframe 
-      frameborder="0" 
-      width="400"     
-      height="200"
-      src="https://drive.google.com/file/d/1ejDVESJ1_G9DahKHjpsNXX0VzQhJc5oj/preview">    
-    </iframe>-->
+  
+<!--Marquee's are obsolete...Added a timer imstead...Ask Sara can we still use it?-->
+  <!-- <footer>
+    <marquee behavior="scroll" direction="left" scrollamount="5" id="marquee">Cool Christmas facts...1) “Silent Night” is the most recorded Christmas song in history, with over 733 different versions copyrighted since 1978. 2) Though Santa Claus has worn blue and white and green in the past, his traditional red suit came from a 1930s ad by Coca Cola. 3) “White Christmas” is the best-selling song of all time. 4) Rudolph was actually conceived by a department store, Montgomery Ward, as a marketing gimmick to get kids to buy holiday coloring books. 5) The original lyrics to “Hark! The Herald Angel Sings” were “Hark! How the Welkin rings!” Welkin is an old, English term for Heaven. A preacher later tweaked the lyric. 6)  Rudolph was almost named Rollo or Reginald. Reginald the Red-Nosed Reindeer doesn’t quite have the same ring to it. 7) “Jingle Bells” was originally supposed to be a Thanksgiving song. 8) Mariah Carey’s “All I Want for Christmas Is You” is considered to be the most popular Christmas song now. 9) Over the years, other reindeer have been name checked on Santa’s sleigh team, such as: Flossie, Glossie, Racer, Pacer, Scratcher, Feckless, Ready, Steady, and Fireball (no relation to the whiskey). 10) And the highest-grossing Christmas movie of all time is How the Grinch Stole Christmas. The Jim Carrey version. </marquee>
+</footer> -->
     
-    <!--End of audio player-->
-    <marquee behavior="scroll" direction="left">Cool Christams facts...1) “Silent Night” is the most recorded Christmas song in history, with over 733 different versions copyrighted since 1978. 2) Though Santa Claus has worn blue and white and green in the past, his traditional red suit came from a 1930s ad by Coca Cola. 3) “White Christmas” is the best-selling song of all time. 4) Rudolph was actually conceived by a department store, Montgomery Ward, as a marketing gimmick to get kids to buy holiday coloring books. 5) The original lyrics to “Hark! The Herald Angel Sings” were “Hark! How the Welkin rings!” Welkin is an old, English term for Heaven. A preacher later tweaked the lyric. 6)  Rudolph was almost named Rollo or Reginald. Reginald the Red-Nosed Reindeer doesn’t quite have the same ring to it. 7) “Jingle Bells” was originally supposed to be a Thanksgiving song. 8) Mariah Carey’s “All I Want for Christmas Is You” is considered to be the most popular Christmas song now. 9) Over the years, other reindeer have been name checked on Santa’s sleigh team, such as: Flossie, Glossie, Racer, Pacer, Scratcher, Feckless, Ready, Steady, and Fireball (no relation to the whiskey). 10) And the highest-grossing Christmas movie of all time is How the Grinch Stole Christmas. The Jim Carrey version. </marquee>
-    
-
-
 </div>
-
-
 
 <!-- link to jquery -->
 <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
-<!-- link to google maps api -->
-  <script src="https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js"></script>
-<!--audio player scripts-->
 
-<!--audio player scripts end-->
+<!-- link to snow animation -->
+<script src="https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js"></script>
+
 <!--Link to google maps api-->
 <script 
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDefnABmOsg8D1gZhf8obVEccjwjyP-JKQ&">
 </script>
-<!-- Link to bt.js file for testing -->
+
+<!-- Link to js file for testing -->
 <script src="assets/javascript/app.js" type="text/javascript"></script>
 </body>
 </html>

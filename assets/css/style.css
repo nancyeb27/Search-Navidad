@@ -1,10 +1,97 @@
- body{
-      font-family: 'Mountains of Christmas', cursive;
-      /*background-image: url();*/
+p, td {
+    font-family: Arial, Helvetica, sans-serif;
+    /*background-image: url();*/
+}
+
+.panel, #zipSection, #zipText {
+    font-family: 'Mountains of Christmas', cursive;
+}
+
+#zipText{
+    font-size: 20px;
+}
+.jumbotron{
+  text-align: center;
+  background:url(../../images/header-background.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  color: white;
+  font-weight: bolder;
+  text-shadow: 2px 2px 8px rgb(8, 8, 8);
+  font-family: 'Mountains of Christmas', cursive;
   }
 
-.jumbotron{
+#audio-section{
+    position: relative;
+    float: right;
+    padding-bottom: -20px;
+}
+
+#song-text{
     text-align: center;
+
+    font-family: 'Mountains of Christmas', cursive;
+}
+
+img{
+    height: 200px;
+    width: 200px;
+
+}
+
+
+#marquee{
+    background-color:aliceblue;
+}
+
+
+
+/*countdown timer*/
+.timer {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    text-align: center;
+    position: relative;
+    float: right;
+    padding-bottom: -20px;
+  }
+  
+  h2 {
+    font-weight: normal;
+  }
+  
+  li {
+    display: inline-block;
+    font-size: 1.2em;
+    list-style-type: none;
+    padding: 1em;
+    text-transform: uppercase;
+    font-family: 'Mountains of Christmas', cursive;
+  }
+  
+  li span {
+    display: block;
+    font-size: 1.5rem;
+  }
+  #countDown{
+    font-family: 'Mountains of Christmas', cursive;
+  }
+
+#days{
+    color:green;
+}
+#hours{
+    color:red;
+}
+#minutes{
+    color:green;
+}
+#seconds{
+    color:red;
+}
+
     background:url(../../images/header-background.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -12,13 +99,32 @@
     font-weight: bolder;
     text-shadow: 2px 2px 8px rgb(8, 8, 8);
     }
-  
- .map-div {
-      height: 400px;
 
-   }
-  #map {
-      height: 400px;
-      width: 400px;
-  }
+#map0 {
+    height: 300px;
+    width: 300px;
+    }
+
+#map1 {
+    height: 300px;
+    width: 300px;
+    }
+
+#map2 {
+    height: 300px;
+    width: 300px;
+    }
+
+#map3 {
+        height: 300px;
+        width: 300px;
+    }
+  
+#map4 {
+      height: 300px;
+      width: 300px;
+    }
+
+
+
 
