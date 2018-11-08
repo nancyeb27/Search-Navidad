@@ -3,7 +3,7 @@ var sf = new Snowflakes();
 
 $("#search-input").on("click", function (event) {
     event.preventDefault();
-
+    var mapCounter = 0;
 
 
     var userZip = $("#zip").val().trim()
@@ -17,7 +17,6 @@ $("#search-input").on("click", function (event) {
     }).then(function (response) {
         console.log(response);
         var results = response.results
-         
       
         for (var i = 0; i < results.length; i++) {
             var name = results[i].name;
@@ -26,9 +25,15 @@ $("#search-input").on("click", function (event) {
     
             //TESTTTTTTT
             var newRow = $("<tr>");
-            newRow.append("<td>" + name + "<td>");
-            newRow.append("<td>" + description[0] + "<td>");
-            $(".table tbody").append(newRow);
+            newRow.append("<td>" + name + "</td>");
+            newRow.append("<td>" + description[0] + "</td>");
+
+            var mapCell = $("<td>");
+            var mapDiv = $("<div>");
+            mapDiv.attr("id","map" + mapCounter);
+            mapCell.html(mapDiv);
+            newRow.append(mapCell);
+            $(".table tbody").prepend(newRow);
 
             // MAP DISPLAY
 
@@ -45,25 +50,21 @@ $("#search-input").on("click", function (event) {
 
             }
 
-            console.log("Test:" + eventLat);
-            console.log("TestLon:" + eventLon);
-
             var map;
             function initMap() {
             
                 var location = {lat: eventLat, lng: eventLon};
                 var map = new google.maps.Map(
-                document.getElementById('map'), {zoom: 13, center: location});
+                document.getElementById("map" + mapCounter), {zoom: 13, center: location});
                 var marker = new google.maps.Marker({position: location, map: map});
             }
-             // $("<div>").attr("id", "map" + results[i])
+            
             initMap();
+
+            mapCounter++
+            console.log("counter: " + mapCounter);
         }
 
-        var marker = new google.maps.Marker({
-            position: {lat: eventLat, lng: eventLon},
-            title:"Hello World!"
-        });
 
     })
 

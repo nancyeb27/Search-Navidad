@@ -12,13 +12,31 @@
     font-weight: bolder;
     text-shadow: 2px 2px 8px rgb(8, 8, 8);
     }
-  
- .map-div {
-      height: 400px;
 
-   }
-  #map {
-      height: 400px;
-      width: 400px;
-  }
+#map0 {
+    height: 300px;
+    width: 300px;
+    }
+
+#map1 {
+    height: 300px;
+    width: 300px;
+    }
+
+#map2 {
+    height: 300px;
+    width: 300px;
+    }
+
+#map3 {
+        height: 300px;
+        width: 300px;
+    }
+  
+#map4 {
+      height: 300px;
+      width: 300px;
+    }
+
+
 
