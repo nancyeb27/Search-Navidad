@@ -21,15 +21,6 @@ p, td {
   font-family: 'Mountains of Christmas', cursive;
   }
 
-.map-div {
-    height: 200px;
-
- }
-#map {
-    height: 200px;
-    width: 200px;
-}
-
 #audio-section{
     position: relative;
     float: right;
@@ -38,6 +29,7 @@ p, td {
 
 #song-text{
     text-align: center;
+
     font-family: 'Mountains of Christmas', cursive;
 }
 
@@ -100,4 +92,40 @@ img{
 #seconds{
     color:red;
 }
+
+    background:url(../../images/header-background.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    color: white;
+    font-weight: bolder;
+    text-shadow: 2px 2px 8px rgb(8, 8, 8);
+    }
+
+#map0 {
+    height: 300px;
+    width: 300px;
+    }
+
+#map1 {
+    height: 300px;
+    width: 300px;
+    }
+
+#map2 {
+    height: 300px;
+    width: 300px;
+    }
+
+#map3 {
+        height: 300px;
+        width: 300px;
+    }
+  
+#map4 {
+      height: 300px;
+      width: 300px;
+    }
+
+
+
 
