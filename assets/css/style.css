@@ -1,6 +1,6 @@
 p, td {
     font-family: Arial, Helvetica, sans-serif;
-    /*background-image: url();*/
+
 }
 
 .panel, #zipSection, #zipText {
@@ -10,6 +10,7 @@ p, td {
 #zipText{
     font-size: 20px;
 }
+
 .jumbotron{
   text-align: center;
   background:url(../../images/header-background.jpg);
@@ -19,7 +20,7 @@ p, td {
   font-weight: bolder;
   text-shadow: 2px 2px 8px rgb(8, 8, 8);
   font-family: 'Mountains of Christmas', cursive;
-  }
+}
 
 #audio-section{
     position: relative;
@@ -29,24 +30,18 @@ p, td {
 
 #song-text{
     text-align: center;
-
     font-family: 'Mountains of Christmas', cursive;
 }
 
 img{
     height: 200px;
     width: 200px;
-
 }
-
 
 #marquee{
     background-color:aliceblue;
 }
 
-
-
-/*countdown timer*/
 .timer {
     box-sizing: border-box;
     margin: 0;
@@ -56,75 +51,76 @@ img{
     position: relative;
     float: right;
     padding-bottom: -20px;
-  }
+}
   
-  h2 {
+h2 {
     font-weight: normal;
-  }
+}
   
-  li {
+li {
     display: inline-block;
     font-size: 1.2em;
     list-style-type: none;
     padding: 1em;
     text-transform: uppercase;
     font-family: 'Mountains of Christmas', cursive;
-  }
+}
   
-  li span {
+li span {
     display: block;
     font-size: 1.5rem;
-  }
-  #countDown{
+}
+
+#countDown{
     font-family: 'Mountains of Christmas', cursive;
-  }
+}
 
 #days{
     color:green;
 }
+
 #hours{
     color:red;
 }
+
 #minutes{
     color:green;
 }
+
 #seconds{
     color:red;
 }
 
-    background:url(../../images/header-background.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    color: white;
-    font-weight: bolder;
-    text-shadow: 2px 2px 8px rgb(8, 8, 8);
-    }
-
 #map0 {
     height: 300px;
     width: 300px;
-    }
+}
 
 #map1 {
     height: 300px;
     width: 300px;
-    }
+}
 
 #map2 {
     height: 300px;
     width: 300px;
-    }
+}
 
 #map3 {
-        height: 300px;
-        width: 300px;
-    }
+    height: 300px;
+    width: 300px;
+}
   
 #map4 {
-      height: 300px;
-      width: 300px;
-    }
+    height: 300px;
+    width: 300px;
+}
 
+.noMap {
+    height: 300px;
+    width: 300px;
+}
+  
 
 
 
